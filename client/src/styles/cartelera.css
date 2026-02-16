@@ -1,0 +1,42 @@
+
+.cartelera{
+    background-color: #0E0E11;
+    padding: 10px;
+    margin: 5px;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+
+.peliculas {
+    background-color: #0E0E11;
+    padding: 10px;
+    display: flex;
+    transition: transform 2s cubic-bezier(0.4, 0.0, 0.2 ,1); 
+}
+
+.pelicula{
+    padding: 10px;
+    border: solid 5px;
+    color:#F5C518;
+    background-color: #1A1A22;
+    min-width: 25%;
+    text-align: center;
+    transition: transform 0.4s ease;
+}
+
+.pelicula img{
+    max-height: 500px;
+    object-fit: contain;
+}
+.pelicula h2{
+    color: white;
+    font-family: #B5B5C3 ;
+
+}
+
+.pelicula:hover{
+    transform: scale(1.05);
+    z-index:2;
+}
