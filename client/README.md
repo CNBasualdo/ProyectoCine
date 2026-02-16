@@ -37,3 +37,10 @@ La cartelera funciona como un carrusel horizontal automático:
 -Almacena el array de películas obtenido desde la API.
 -Cada objeto contiene datos como id, title y poster_path.
 
+<h3>Carga de Peliculas</h3>
+
+<img src="https://github.com/CNBasualdo/ProyectoCine/blob/main/client/screenshots/cargarLAPelicula.png" >
+
+-Se ejecuta una sola vez al montar el componente.
+-Llama a la API y guarda los resultados en el estado.
+-Maneja correctamente errores y loading.
