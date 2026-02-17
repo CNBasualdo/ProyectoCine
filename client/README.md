@@ -28,9 +28,9 @@ La cartelera funciona como un carrusel horizontal automático:
 -API externa de películas (ej: TMDb)
 
 
-<h3>Estamos del componente</h3>
+<h3>Estados del componente</h3>
 
-<img src="https://github.com/CNBasualdo/ProyectoCine/blob/main/client/screenshots/estadosDelComponente.png" >
+<img src="https://github.com/CNBasualdo/ProyectoCine/blob/main/client/screenshots/CompCartel/estadosDelComponente.png" >
 
 <h4>Index Actual</h4>
 -Controla el desplazamiento del carrusel.
@@ -43,7 +43,7 @@ La cartelera funciona como un carrusel horizontal automático:
 
 <h3>Carga de Peliculas(API externa)</h3>
 
-<img src="https://github.com/CNBasualdo/ProyectoCine/blob/main/client/screenshots/cargarLAPelicula.png" >
+<img src="https://github.com/CNBasualdo/ProyectoCine/blob/main/client/screenshots/CompCartel/cargarLAPelicula.png" >
 
 -Se ejecuta una sola vez al montar el componente.
 -Llama a la API y guarda los resultados en el estado.
@@ -51,7 +51,7 @@ La cartelera funciona como un carrusel horizontal automático:
 
 <h3>Configuracion de la cartelera</h3>
 
-<img src="https://github.com/CNBasualdo/ProyectoCine/blob/main/client/screenshots/configuracionDeCartelera.png">
+<img src="https://github.com/CNBasualdo/ProyectoCine/blob/main/client/screenshots/CompCartel/configuracionDeCartelera.png">
 
 -Define cuántas películas se ven al mismo tiempo.
 
@@ -65,7 +65,7 @@ La cartelera funciona como un carrusel horizontal automático:
 
 <h3>Autoplay del carrusel</h3>
 
-<img src="https://github.com/CNBasualdo/ProyectoCine/blob/main/client/screenshots/autoPlayDelCarrusel.png">
+<img src="https://github.com/CNBasualdo/ProyectoCine/blob/main/client/screenshots/CompCartel/autoPlayDelCarrusel.png">
 
 <h4>Como Funciona:</h4>
 -Se ejecuta solo cuando hay películas cargadas.
@@ -76,7 +76,7 @@ La cartelera funciona como un carrusel horizontal automático:
 
 <h3>Movimiento del carrusel</h3>
 
-<img src="https://github.com/CNBasualdo/ProyectoCine/blob/main/client/screenshots/MovimientoDelCarrusel(clave).png">
+<img src="https://github.com/CNBasualdo/ProyectoCine/blob/main/client/screenshots/CompCartel/MovimientoDelCarrusel(clave).png">
 
 -translateX desplaza horizontalmente todo el contenedor.
 -El valor depende del índice actual.
@@ -84,7 +84,7 @@ La cartelera funciona como un carrusel horizontal automático:
 
 <h3>Render de las peliculas</h3>
 
-<img src="https://github.com/CNBasualdo/ProyectoCine/blob/main/client/screenshots/renderDeLasPeliculas.png">
+<img src="https://github.com/CNBasualdo/ProyectoCine/blob/main/client/screenshots/CompCartel/renderDeLasPeliculas.png">
 
 -Se recorren todas las películas con map.
 -key asegura un render eficiente.
@@ -92,6 +92,9 @@ La cartelera funciona como un carrusel horizontal automático:
 
 
 <h3>Resultado final</h3>
+
+<img src="https://github.com/CNBasualdo/ProyectoCine/blob/main/client/screenshots/CompCartel/CompCarte.jpg">
+
 ✅ Cartelera automática
 ✅ Varias películas visibles
 ✅ Transición fluida
