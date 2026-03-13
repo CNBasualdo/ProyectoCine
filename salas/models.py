@@ -2,27 +2,36 @@ from django.db import models
 
 # Create your models here.
 class Sala(models.Model):
-    nombre = models.CharField(max_length=100, unique=True)
-    total_asientos = models.PositiveIntegerField()
-    asientos_reservados = models.PositiveBigIntegerField(default=0)
+    nombre = models.CharField(max_length=50)
+    filas = models.IntegerField()
+    columnas = models.IntegerField()
 
     def __str__(self):
-        return f"{self.nombre} ({self.asientos_reservados}/{self.total_asientos} reservados)"
-
-class AsientosReservado(models.Model):
-    sala= models.ForeignKey(Sala, on_delete=models.CASCADE, related_name='asientos')
-    numero_asiento = models.PositiveBigIntegerField()
-    estado = models.CharField(
-        max_length=20,
-        choices=[
-            ('reservado','Reservado'),
-            ('ocupado', 'Ocupado'),
-        ],
-        default='reservado'
-    )
-
-    class Meta:
-        unique_together = ('sala','numero_asiento')
+        return self.nombre
+    
+class Asiento(models.Model):
+    sala = models.ForeignKey(Sala, on_delete=models.CASCADE, related_name="asientos")
+    fila = models.IntegerField()
+    columna = models.IntegerField()
 
     def __str__(self):
-        return f"Asiento {self.numero_asiento}-{self.sala.nombre} ({self.estado})"
+        return f"Sala {self.sala.nombre} - Fila {self.fila} Col {self.columna}"
+    
+class Funcion(models.Model):
+    pelicula_id = models.IntegerField()
+    sala = models.ForeignKey(Sala, on_delete=models.CASCADE)
+    fecha_hora = models.DateTimeField()
+
+    def __str__(self):
+        return f"Peli {self.pelicula_id} - {self.fecha_hora}"
+    
+class Reserva(models.Model):
+    funcion = models.ForeignKey(Funcion, on_delete=models.CASCADE, related_name="reservas")
+    asiento =models.ForeignKey(Asiento, on_delete=models.CASCADE)
+    reservado = models.BooleanField(default=True)
+
+    def __str__(self):
+        return f"Asiento{self.asiento.id}reservado"
+
+
+

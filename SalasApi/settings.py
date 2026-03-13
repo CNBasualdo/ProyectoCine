@@ -81,7 +81,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'HOST':'localhost',
         'PORT':5432,
-        'NAME': 'salasApi',
+        'NAME': 'cine_db',
         'USER':'postgres',
         'PASSWORD' : 'admin',
         
@@ -130,6 +130,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+CORS_ALLOW_ALL_ORIGINS = True
 
 #la lista de los servidores que se pueden conectar
 CORS_ALLOWED_ORIGINS = ["http://localhost:5173"] 

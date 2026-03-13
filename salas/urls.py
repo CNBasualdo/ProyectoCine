@@ -1,15 +1,10 @@
-from django.urls import path, include
-from rest_framework import routers 
-from salas import views
-
-
-router = routers.DefaultRouter()
-router.register(r'salas', views.SalasView,'salas')
-router.register(r'asientos', views.AsientosView, 'asientos' )
+from django.urls import path
+from .views import asientos_por_funcion, reservar_asiento
 
 urlpatterns =[
-    path ("api/v1/", include(router.urls))
+    path("funciones/<int:funcion_id>/asientos/", asientos_por_funcion),
+    path ("reservar/", reservar_asiento),
 ]
 
 
-#todo genera las rutas get, put, delete
+
