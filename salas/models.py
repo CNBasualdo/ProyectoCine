@@ -9,6 +9,19 @@ class Sala(models.Model):
     def __str__(self):
         return self.nombre
     
+    def save(self, *args, **kwargs):
+        nueva = self.pk is None
+        super().save(*args, **kwargs)
+
+        if nueva :
+            for fila in range(1,self.filas + 1):
+                for columna in range(1, self.columnas +1 ):
+                    Asiento.objects.create(
+                        sala = self,
+                        fila=fila,
+                        columna = columna
+                        )
+    
 class Asiento(models.Model):
     sala = models.ForeignKey(Sala, on_delete=models.CASCADE, related_name="asientos")
     fila = models.IntegerField()
@@ -26,9 +39,8 @@ class Funcion(models.Model):
         return f"Peli {self.pelicula_id} - {self.fecha_hora}"
     
 class Reserva(models.Model):
-    funcion = models.ForeignKey(Funcion, on_delete=models.CASCADE, related_name="reservas")
+    funcion = models.ForeignKey(Funcion, on_delete=models.CASCADE, related_name="reservas" )
     asiento =models.ForeignKey(Asiento, on_delete=models.CASCADE)
-    reservado = models.BooleanField(default=True)
 
     def __str__(self):
         return f"Asiento{self.asiento.id}reservado"

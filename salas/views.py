@@ -30,3 +30,16 @@ def reservar_asiento(request):
         asiento_id = asiento_id
     )
     return Response({"reservado":True})
+
+@api_view(["GET"])
+def lista_funciones(request):
+    funciones = Funcion.objects.all()
+    data=[]
+    for funcion in funciones:
+        data.append({
+            "id" : funcion.id,
+            "pelicula_id" : funcion.pelicula_id,
+            "sala" : funcion.sala.nombre,
+            "horario" : funcion.fecha_hora
+        })
+    return Response(data)
